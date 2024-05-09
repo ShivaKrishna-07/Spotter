@@ -1,10 +1,10 @@
 "use client"
 
-
 import { load as cocoSSDLoad } from '@tensorflow-models/coco-ssd';
 import React, { useEffect, useRef, useState } from 'react'
 import Webcam from 'react-webcam'
 import * as tf from '@tensorflow/tfjs'
+import { renderPredictions } from '@/utils/render-predictions';
 
 function ObjectDetection() {
 
@@ -61,7 +61,7 @@ function ObjectDetection() {
   return (
     <div className='mt-8'>
         {   isLoading ? (
-            <div className='gradient-text'>Loading</div>
+            <div className='gradient-text'>Loading...</div>
         ):
             (<div className="gradient relative flex justify-center items-center gradient p-1.5 rounded-md">
             <Webcam
